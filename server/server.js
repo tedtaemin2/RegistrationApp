@@ -12,7 +12,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 // handle requests for static files
-// app.use('/static', express.static(path.resolve(__dirname, '../public/src')));
+app.use('/static', express.static(path.resolve(__dirname, '../client')));
 
 // define route handlers
 app.use('/report', analysisRouter);

@@ -8,7 +8,8 @@ router.post('/',
   registrationController.saveUser,
   (req, res) => {
     // res.redirect('../../client/confirmation.html');
-    res.redirect(200, 'http://google.com');
+    // console.log('hit');
+    res.render('..client/views/confirmation');
   });
 
 module.exports = router;
