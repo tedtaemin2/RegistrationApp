@@ -5,33 +5,37 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="style.css">
     <title>Registration</title>
 
 </head>
 
-<body>
-    <h1>This is the registration__ page</h1>
+<body class="registration-body">
     
-    <form>
-        <h1>Register to our awesome app!</h1>
-          <input type="text" id="firstName" placeholder="First Name"  />
-          <h6 id="firstNameError"></h6>
-          <input type="text" id="lastName" placeholder="Last Name"  />
-          <h6 id="lastNameError"></h6>
+    <form class="form">
+        <div class ="title">Welcome!</div>
+        <div class ="subtitle">Register to our App!</div>
+          <input type="text" id="first-name" placeholder="First Name"  />
+          <div class="error" id="first-name-error"></div>
+          <input type="text" id="last-name" placeholder="Last Name"  />
+          <div class="error" id="last-name-error"></div>
           <input type="text" id="address1" placeholder="Address 1"  />
-          <h6 id="address1Error"></h6>
+          <div class="error" id="address1-error"></div>
           <input type="text" id="address2" placeholder="Address 2"  />
+          <div class="text-fill">text</div>
           <input type="text" id="city" placeholder="City"  />
-          <h6 id="cityError"></h6>
+          <div class="error" id="city-error"></div>
           <select id="state" placeholder="State (IF US)" >
           </select>
-          <input type="text" id="zipcode" placeholder="Zip Code" />
-          <h6 id="zipCodeError"></h6>
+          <div class="text-fill">text</div>
+          <input type="text" id="zip-code" placeholder="Zip Code" />
+          <div class="error" id="zip-code-error"></div>
           <select  id="country" placeholder="Country">
             <option value="USA"> USA</option>
           </select>
         <button id="submit-btn" type="button" onClick=submitReg()> Submit </button>
         </form>
+        
       <script type="text/javascript" src="/registration.js"></script>
 </body>
 

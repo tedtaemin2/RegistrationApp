@@ -1,0 +1,124 @@
+html,
+body {
+	height: 100%;
+}
+
+body {
+	margin: 0;
+	background: linear-gradient(45deg, #49a09d, #5f2c82);
+	font-family: sans-serif;
+	font-weight: 100;
+}
+
+input, select {
+  height: 35px;
+  position: relative;
+  width: 250px;
+  border-radius: 12px;
+  box-sizing: border-box;
+  border: 0;
+  margin-bottom: 5px;
+}
+
+table {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+td {
+  padding: 10px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-collapse: collapse;
+}
+
+th {
+  color: rgb(20, 38, 43);
+  border-bottom: 1px solid black;
+}
+
+
+.error {
+  color:red;
+  font-size: smaller;
+}
+
+.form {
+  background-color: #15172b;
+  border-radius: 20px;
+  box-sizing: border-box;
+  height: 700px;
+  padding: 20px;
+  width: 300px;
+}
+
+.placeholder {
+  color: #65657b;
+  font-family: sans-serif;
+  left: 20px;
+  line-height: 14px;
+  pointer-events: none;
+  position: absolute;
+  transform-origin: 0 50%;
+  transition: transform 200ms, color 200ms;
+  top: 20px;
+}
+
+.registration-body {
+  align-items: center;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+.subtitle {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 35px;
+}
+
+.text-fill {
+  color: #15172b;
+}
+
+.title {
+  color: #eee;
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: 600;
+  margin-top: 30px;
+  margin-left: 35px;
+}
+
+#admin-report {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+}
+
+#confirmation {
+  color: #eee;
+}
+
+#submit-btn {
+  background-color: #08d;
+  border-radius: 12px;
+  border: 0;
+  box-sizing: border-box;
+  color: #eee;
+  cursor: pointer;
+  font-size: 18px;
+  height: 50px;
+  margin-top: 38px;
+  // outline: 0;
+  text-align: center;
+  width: 100%;
+}
+

@@ -4,15 +4,11 @@ const registrationController = require('../controllers/registrationController');
 
 const router = express.Router();
 
+// route to handle POST request to save users in db and redirect user to confirmation page
 router.post('/',
   registrationController.saveUser,
   (req, res) => {
-    // res.redirect('/confirmation');
-
-    res.status(200).send('success');
-    // res.redirect('/confirmation');
-    // res.sendFile(path.resolve(__dirname, '../../client/views/confirmation.html'));
-    // res.redirect('localhost:3000/confirmation');
+    res.redirect(201, '/confirmation');
   });
 
 module.exports = router;

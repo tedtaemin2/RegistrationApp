@@ -4,35 +4,36 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const analysisRouter = require('./routes/reportRouter');
-const registrationRouter = require('./routes/registrationRouter');
-
 // handle parsing request body
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// handle requests for static files
-// app.use('/static', express.static(path.resolve(__dirname, '/client/views')));
-
 // define route handlers
+const analysisRouter = require('./routes/reportRouter');
+const registrationRouter = require('./routes/registrationRouter');
+
 app.use('/report', analysisRouter);
 app.use('/registration', registrationRouter);
 
-// set up landing page
+// set up views for registration, confirmation and report pages
 app.get('/', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/views/registration.html')));
-// set up report page
 app.get('/adminReport', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/views/report.html')));
 app.get('/confirmation', (req, res) => res.status(200).sendFile(path.resolve(__dirname, '../client/views/confirmation.html')));
 
-// handle all other requests
+// handle request for CSS and DOM JS files
 app.get('/registration.js', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../client/registration.js'));
 });
 app.get('/report.js', (req, res) => {
   res.status(200).sendFile(path.resolve(__dirname, '../client/report.js'));
 });
+app.get('/style.css', (req, res) => {
+  res.status(200).sendFile(path.resolve(__dirname, '../client/stylesheet/style.css'));
+});
+
+// handle all other requests
 app.use('*', (req, res) => {
-  res.status(400).send('This is not the route that you want');
+  res.status(400).send('Incorrect route found');
 });
 
 // handle global errors
@@ -50,3 +51,5 @@ app.use((err, req, res, next) => {
 
 // start server
 app.listen(port, console.log(`Server listening on Port ${port}`));
+
+module.exports = app;

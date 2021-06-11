@@ -1,5 +1,6 @@
 const db = require('../models/registrationModel');
 
+// controller to handle GET request for all users
 class ReportControllerBlueprint {
   async getReport(req, res, next) {
     try {
@@ -7,7 +8,6 @@ class ReportControllerBlueprint {
       const result = await db.query(queryString);
       const allUsers = result.rows;
       res.locals.allUsers = allUsers;
-      console.log(allUsers);
       next();
     } catch (error) {
       console.log(error);
@@ -16,5 +16,4 @@ class ReportControllerBlueprint {
 }
 
 const reportController = new ReportControllerBlueprint();
-
 module.exports = reportController;
