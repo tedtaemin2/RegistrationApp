@@ -5,6 +5,9 @@ const pool = new Pool({
   port: 5432,
   user: 'ouyyrxwpjlvxri',
   password: '09f52c04d824af4f5865c98ef4353178a117a729cb2b65cddbba33c7c54a9f96',
+  ssl: {
+    rejectUnauthorized: false,
+  },
 });
 // const client = new Client({
 
@@ -25,7 +28,7 @@ pool.connect((err) => {
 // pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
 //   if (err) throw err;
 //   console.log(res);
-  // client.end();
+// client.end();
 // });
 
 // module.export = client;
