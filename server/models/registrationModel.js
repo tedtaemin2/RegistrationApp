@@ -22,11 +22,11 @@ pool.connect((err) => {
   }
 });
 
-pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
-  if (err) throw err;
-  console.log(res);
+// pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
+//   if (err) throw err;
+//   console.log(res);
   // client.end();
-});
+// });
 
 // module.export = client;
 // const { Pool } = require('pg');
