@@ -41,10 +41,10 @@ class RegistrationControllerBlueprint {
     console.log(result);
     next();
   }
-  //  } catch (error) {
-  //   console.log(error);
-  // }
-  // }
+   } catch (error) {
+    console.log(error);
+  }
+  }
 }
 
 const registrationController = new RegistrationControllerBlueprint();
