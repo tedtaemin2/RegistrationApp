@@ -1,6 +1,6 @@
-const { Client } = require('pg');
+const { Pool } = require('pg');
 
-const client = new Client({
+const pool = new Pool({
   host: 'ec2-23-23-128-222.compute-1.amazonaws.com',
   port: 5432,
   user: 'ouyyrxwpjlvxri',
@@ -14,7 +14,7 @@ const client = new Client({
 //   },
 // });
 
-client.connect((err) => {
+pool.connect((err) => {
   if (err) {
     console.error('connection error', err.stack);
   } else {
@@ -22,7 +22,7 @@ client.connect((err) => {
   }
 });
 
-client.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
+pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
   if (err) throw err;
   console.log(res);
   // client.end();
