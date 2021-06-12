@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+  document.getElementById('submit-btn').addEventListener('click', submitReg);
+  createStates();
+});
 // function to create select tag of US states and territories
 function createStates() {
   const statesArr = ['AL', 'AK', 'AS', 'AZ', 'AR', 'CA', 'CO', 'CT', 'DE', 'DC', 'FM', 'FL', 'GA', 'GU', 'HI', 'ID', 'IL', 'IN', 'IA', 'KS', 'KY', 'LA', 'ME', 'MH', 'MD', 'MA', 'MI', 'MN', 'MS', 'MO', 'MT', 'NE', 'NV', 'NH', 'NJ', 'NM', 'NY', 'NC', 'ND', 'MP', 'OH', 'OK', 'OR', 'PW', 'PA', 'PR', 'RI', 'SC', 'SD', 'TN', 'TX', 'UT', 'VT', 'VI', 'VA', 'WA', 'WV', 'WI', 'WY'];
@@ -75,7 +79,7 @@ function submitReg() {
     })
       .then((data) => {
         console.log('Success:', data);
-        location.replace(data.url);
+        location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
       })
 
       .catch((error) => {
@@ -83,5 +87,3 @@ function submitReg() {
       });
   }
 }
-
-createStates();
