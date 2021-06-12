@@ -22,6 +22,10 @@ pool.connect((err) => {
     console.error('connection error', err.stack);
   } else {
     console.log('connected');
+    pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
+      if (err) throw err;
+      console.log(res);
+    });
   }
 });
 
