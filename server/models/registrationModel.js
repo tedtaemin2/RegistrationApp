@@ -17,8 +17,8 @@ const client = new Client({
 client.connect();
 
 client.query('CREATE TABLE Registration (Registration_ID serial primary key, First_Name varchar not null, Last_Name varchar not null, Address_1 varchar not null, Address_2 varchar, City varchar not null, State varchar not null, Zip_Code integer not null, Country varchar not null, Time_Stamp timestamp not null)', (err, res) => {
-  if (err) throw err;
-  client.end();
+  // if (err) throw err;
+  // client.end();
 });
 
 module.export = client;
