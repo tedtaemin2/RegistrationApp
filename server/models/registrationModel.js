@@ -22,13 +22,15 @@ pool.connect((err) => {
     console.error('connection error', err.stack);
   } else {
     console.log('connected');
-    pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
-      if (err) throw err;
-      console.log(res);
-    });
   }
 });
 
+module.exports = {
+  query: (text, params, callback) => {
+    console.log('Your query: ', text);
+    return pool.query(text, params, callback);
+  },
+};
 // pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
 //   if (err) throw err;
 //   console.log(res);
@@ -46,10 +48,3 @@ pool.connect((err) => {
 //     rejectUnauthorized: false,
 //   },
 // });
-
-// module.exports = {
-//   query: (text, params, callback) => {
-//     console.log('Your query: ', text);
-//     return pool.query(text, params, callback);
-//   },
-// };
