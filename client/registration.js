@@ -66,9 +66,6 @@ function submitReg() {
       timeStamp: new Date(),
     };
 
-
-
-    
     fetch('/registration', {
       method: 'POST',
       headers: {
@@ -78,8 +75,9 @@ function submitReg() {
     })
       .then((data) => {
         console.log('Success:', data);
-        // location.replace('http://localhost:3000/confirmation');
+        location.replace(data.url);
       })
+
       .catch((error) => {
         console.log('Error:', error);
       });
