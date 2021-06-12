@@ -1,7 +1,8 @@
 const { Pool } = require('pg');
+require('dotenv').config();
 
 const pool = new Pool({
-  connectionString: 'postgres://ouyyrxwpjlvxri:09f52c04d824af4f5865c98ef4353178a117a729cb2b65cddbba33c7c54a9f96@ec2-23-23-128-222.compute-1.amazonaws.com:5432/df813d0cf5qd7',
+  connectionString: process.env.PG_URI,
   port: 5432,
   user: 'ouyyrxwpjlvxri',
   password: '09f52c04d824af4f5865c98ef4353178a117a729cb2b65cddbba33c7c54a9f96',
@@ -9,13 +10,6 @@ const pool = new Pool({
     rejectUnauthorized: false,
   },
 });
-// const client = new Client({
-
-//   connectionString: process.env.DATABASE_URL,
-//   ssl: {
-//     rejectUnauthorized: false,
-//   },
-// });
 
 pool.connect((err) => {
   if (err) {
@@ -31,20 +25,3 @@ module.exports = {
     return pool.query(text, params, callback);
   },
 };
-// pool.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
-//   if (err) throw err;
-//   console.log(res);
-// client.end();
-// });
-
-// module.export = client;
-// const { Pool } = require('pg');
-// require('dotenv').config();
-
-// const pool = new Pool({
-
-//   connectionString: process.env.PG_URI,
-//   ssl: {
-//     rejectUnauthorized: false,
-//   },
-// });
