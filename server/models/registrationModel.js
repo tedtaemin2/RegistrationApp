@@ -16,7 +16,7 @@ const client = new Client({
 
 client.connect();
 
-client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
+client.query('CREATE TABLE Registration (Registration_ID serial primary key, First_Name varchar not null, Last_Name varchar not null, Address_1 varchar not null, Address_2 varchar, City varchar not null, State varchar not null, Zip_Code integer not null, Country varchar not null, Time_Stamp timestamp not null)', (err, res) => {
   if (err) throw err;
   for (const row of res.rows) {
     console.log(JSON.stringify(row));
