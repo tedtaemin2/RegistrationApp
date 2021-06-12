@@ -1,17 +1,24 @@
 const { Client } = require('pg');
 
 const client = new Client({
-  connectionString: process.env.DATABASE_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  host: 'ec2-23-23-128-222.compute-1.amazonaws.com',
+  port: 5432,
+  user: 'ouyyrxwpjlvxri',
+  password: '09f52c04d824af4f5865c98ef4353178a117a729cb2b65cddbba33c7c54a9f96',
 });
+// const client = new Client({
+
+//   connectionString: process.env.DATABASE_URL,
+//   ssl: {
+//     rejectUnauthorized: false,
+//   },
+// });
 
 client.connect();
 
 client.query('SELECT table_schema,table_name FROM information_schema.tables;', (err, res) => {
   if (err) throw err;
-  for (let row of res.rows) {
+  for (const row of res.rows) {
     console.log(JSON.stringify(row));
   }
   client.end();
