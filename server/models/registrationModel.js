@@ -14,14 +14,21 @@ const client = new Client({
 //   },
 // });
 
-client.connect();
+client.connect((err) => {
+  if (err) {
+    console.error('connection error', err.stack);
+  } else {
+    console.log('connected');
+  }
+});
 
-client.query('CREATE TABLE Registration (Registration_ID serial primary key, First_Name varchar not null, Last_Name varchar not null, Address_1 varchar not null, Address_2 varchar, City varchar not null, State varchar not null, Zip_Code integer not null, Country varchar not null, Time_Stamp timestamp not null)', (err, res) => {
-  // if (err) throw err;
+client.query('SELECT * FROM Registration ORDER BY Time_Stamp DESC', (err, res) => {
+  if (err) throw err;
+  console.log(res);
   // client.end();
 });
 
-module.export = client;
+// module.export = client;
 // const { Pool } = require('pg');
 // require('dotenv').config();
 
