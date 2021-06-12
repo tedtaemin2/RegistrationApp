@@ -29,7 +29,7 @@ function submitReg() {
   const country = document.getElementById('country').value;
 
   // initialize form error variable to determine if submission should be allowed
-  const formError = false;
+  let formError = false;
 
   // checking for form validation and changing formError variable if error exists
   if (firstName.length < 1 || !firstName.match(/^[a-zA-Z ]/g)) {
