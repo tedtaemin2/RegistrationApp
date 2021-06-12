@@ -8,7 +8,6 @@ const router = express.Router();
 router.post('/',
   registrationController.saveUser,
   (req, res) => {
-    console.log('registration router is being hit');
     res.redirect(201, '/confirmation');
   });
 
