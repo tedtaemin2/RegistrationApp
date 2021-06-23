@@ -79,6 +79,7 @@ function submitReg() {
     })
       .then((data) => {
         console.log('Success:', data);
+
         location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
       })
 
