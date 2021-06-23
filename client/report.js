@@ -1,3 +1,7 @@
+window.addEventListener('load', () => {
+  createTable();
+});
+
 /* function to generate table from db input
 consists of 1. GET request from db, 2. creating table headers, 3. creating table rows
 */
@@ -35,5 +39,3 @@ function createTable() {
       console.error('Error:', error);
     });
 }
-
-createTable();
