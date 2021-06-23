@@ -78,7 +78,7 @@ function submitReg() {
       body: JSON.stringify(userObj),
     })
       .then((data) => {
-        // location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
+        location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
         console.log('Success:', data);
       })
 
