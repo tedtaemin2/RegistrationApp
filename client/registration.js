@@ -78,8 +78,8 @@ function submitReg() {
       body: JSON.stringify(userObj),
     })
       .then((data) => {
-        location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
         console.log('Success:', data);
+        location.replace('https://merkle-registration-app.herokuapp.com/confirmation');
       })
 
       .catch((error) => {
